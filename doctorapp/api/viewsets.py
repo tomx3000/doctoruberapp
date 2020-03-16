@@ -58,7 +58,7 @@ class UserViewSet(viewsets.ViewSet):
         if not created:  
         	token.delete()
         	token = Token.objects.create(user=user)
-        SMS(password="1234",phonenumber="0684905873").send(phonenumber=request.data.get("username","0767236526"),message="Life Saving Network, otp "+str(otp))
+        # SMS(password="1234",phonenumber="0684905873").send(phonenumber=request.data.get("username","0767236526"),message="Life Saving Network, otp "+str(otp))
         return Response({"token":token.key,"id":user.id,"phonenumber":user.username,"first_name":user.first_name,"last_name":user.last_name,"gender":user.gender,"user_type":user.user_type,"otp":user.otp})
         
     

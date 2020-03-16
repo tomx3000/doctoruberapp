@@ -1,4 +1,5 @@
 debidoctor/__pycache__/
+doctorapp/__pycache__/
 db.sqlite3
 doctorenv/
 media/

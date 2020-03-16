@@ -24,12 +24,13 @@ from .sms import SMS
 def AddProfile(request,*args,**kargs):
     token = Token.objects.filter(key=request.META.get('HTTP_AUTHORIZATION').strip()[5:].strip())
     
-    if len(token)>0:        
-        form = ImageForm(request.POST,request.FILES,instance=token[0].user)
+    if len(token)>0: 
+        user = token[0].user       
+        form = ImageForm(request.POST,request.FILES,instance=user)
         if form.is_valid():
             photo = form.save()
-        SMS(password="1234",phonenumber="0684905873").send(phonenumber="0767236526",message="123456")
-        return Response({"success":True}, status=HTTP_200_OK)
+        # SMS(password="1234",phonenumber="0684905873").send(phonenumber="0767236526",message="123456")
+        return Response({"success":True,"image":user.profile_image.url}, status=HTTP_200_OK)
     return Response({"success":False}, status=HTTP_400_BAD_REQUEST)
     
  

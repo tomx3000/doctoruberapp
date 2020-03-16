@@ -25,12 +25,13 @@ SECRET_KEY = '0om9=m1&^lrq6_$aktaxb1#dnkp%s7(8%xx0d+jav^5jp31f67'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["165.227.199.50","192.168.43.211","192.168.100.8","127.0.0.1","tom.com","*"]
+ALLOWED_HOSTS = ["life.debi.website","165.227.199.50","192.168.43.211","192.168.100.8","127.0.0.1","tom.com","*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

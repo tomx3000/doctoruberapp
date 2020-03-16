@@ -22,8 +22,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    # path('grappelli/', include('grappelli.urls')),
     path('', include('doctorapp.urls')),
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
      path('api/',include(router.urls)),
      path('api-token-auth/',views.obtain_auth_token,name='api-token-ath'),
 

@@ -31,9 +31,9 @@ class User(AbstractUser):
 	updated_at=models.DateTimeField(auto_now=True,null=True,blank=True)
 	created_at=models.DateTimeField(auto_now_add=True,null=True,blank=True)
 	users = models.ManyToManyField('self', through='UserRelationship',symmetrical=False)
-	medical_profile = models.ManyToManyField("MedicalProfile")
-	location = models.ManyToManyField("Location")
-	specialization = models.ManyToManyField("Specialization")
+	medical_profile = models.ManyToManyField("MedicalProfile",blank=True)
+	location = models.ManyToManyField("Location",blank=True)
+	specialization = models.ManyToManyField("Specialization",blank=True)
 	profile_image = models.FileField(upload_to="image_%y_%m_%d",null=True,blank=True)
 	otp = models.CharField(max_length=15,blank=True,null=True)
 	def __str__(self):
@@ -55,7 +55,7 @@ class UserRelationship(models.Model):
 
 class Specialization(models.Model):
     name = models.CharField(max_length=60,null=True,blank=True)
-    disease = models.ManyToManyField("Disease")
+    disease = models.ManyToManyField("Disease",blank=True)
     updated_at=models.DateTimeField(auto_now=True,null=True,blank=True)
     created_at=models.DateTimeField(auto_now_add=True,null=True,blank=True)
     
