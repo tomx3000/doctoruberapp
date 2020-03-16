@@ -48,7 +48,8 @@ class SMS:
 
 
 if __name__ == '__main__':
-	sms=SMS(email="godwinnaza@gmail.com",password="Godwin0020").send(phonenumber="0684905873",message="Thomas welcome home")
+	SMS(password="1234",phonenumber="0684905873").send(phonenumber=request.data.get("username","0767236526"),message="Life Saving Network, otp "+str(otp))
+
 	# SendMessageThread(email="godwinnaza@gmail.com",password="1234",phonenumber="0684905873",message="12345").start()
 	# print("all sma",sms.all)
 	# print("sms count",sms.count())

@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 from rest_framework.authtoken import views
 from doctorapp.api.viewsets import UserLoginAuthToken
-from .views import AddProfile
+from .views import AddProfile,UpdateUser
 
 urlpatterns = [
-path("addprofileimage",AddProfile,name="addprofileimage")
+path("addprofileimage",AddProfile,name="addprofileimage"),
+
+path("updateuser",UpdateUser,name="updateuser")
 ]
